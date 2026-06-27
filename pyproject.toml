@@ -1,0 +1,41 @@
+[project]
+name = "banking-compliance"
+version = "0.1.0"
+description = "Banking Compliance System with DDD + Hexagonal Architecture"
+requires-python = ">=3.10"
+authors = [{name = "Your Name", email = "your.email@example.com"}]
+license = {text = "MIT"}
+
+dependencies = [
+    "pydantic>=2.0",
+    "dataclasses-json>=0.6.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.23.0",
+    "sqlalchemy>=2.0",
+    "python-dateutil>=2.8.0",
+    "python-injector>=4.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "pytest-asyncio>=0.21.0",
+    "mypy>=1.0",
+    "black>=23.0",
+    "isort>=5.0",
+    "flake8>=6.0",
+    "pytest-mock>=3.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "--cov=src --cov-report=html"
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+line_length = 100
